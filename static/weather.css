@@ -1,0 +1,289 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.weather-search-box {
+    background-color: #ffffff;
+    width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.weather-search-title {
+    background-image: url("images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    color: #333;
+    text-align: left;
+}
+.weather-search-title p {
+    margin: 0;
+}
+.weather-search-title p:first-child {
+    font-size: 24px;
+    font-weight: bold;
+}
+.weather-search-title p:last-child {
+    font-size: 16px;
+    margin-top: 5px;
+    color: #666;
+}
+.checkbox-container{
+    display: flex;
+}
+#weatherForm {
+    padding: 20px;
+    text-align: left;
+}
+#weatherForm div {
+    margin-bottom: 10px;
+}
+.weather-search-box label {
+    font-size: 14px;
+    color: #09197d;
+    display: block;
+    margin-bottom: 5px;
+}
+/* Used ChatGPT to calculate the right format: lines 54 - 68 Prompt: Help me generate CSS that adds a red asterisk after form labels for 'street', 'city', and 'state' 
+fields to make them required fields. Make sure the input text boxes and select elements are responsive by setting their width to account for padding and margins, 
+and use a total width calculation and apply a border to the input fields */
+label[for="street"]:after, 
+label[for="city"]:after, 
+label[for="state"]:after {
+    content: "*";
+    color: red;
+    margin-left: 2px;
+    font-size: 14px;
+}
+input[type="text"], select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+.city-state-container {
+    display: flex;
+    gap: 10px;
+}
+.city-state-container div {
+    flex: 1;
+}
+.weather-card {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    margin: 0 auto;
+    height: 400px;
+    margin-bottom: 20px;
+}
+.weather-card:hover{
+    box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.3);
+}
+.weather-card-header p {
+    font-size: 2rem;
+    color: #666;
+    margin-top: 5px;
+    font-weight:100;
+}
+.weather-card-body {
+    margin-top: 20px;
+}
+.weather-card-body p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    font-weight:100;
+    color: #909090;
+}
+.temperature span{
+    color: #909090;
+    font-size: 80px;
+    font-weight: light;
+}
+.weather-card-top-flex{
+    display: flex;
+    gap: 250px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+}
+.forecast-table {
+    width: 1100px;
+    margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.forecast-table th, .forecast-table td {
+    border-bottom: 8px solid #f0f0f0;
+    padding: 8px;
+    text-align: center;
+}
+.forecast-table th {
+    border: none; 
+}
+.forecast-table td {
+    border-left: none;
+    border-right: none;
+}
+.forecast-table th {
+    background-color: #606ea8;
+    color: #000000; 
+    font-size: 15px;
+    font-weight: unset;
+    text-align: center;            
+}
+.forecast-table tbody tr {
+    background-color: #ffffff;
+}
+.forecast-table tbody tr:hover {
+    cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#clearButton{
+    color: rgb(255, 255, 255);
+    background-color: #ffb631;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 11px;
+    padding-right: 11px;
+    border-bottom: rgb(223, 97, 1) 3px solid;
+}
+#clearButton:hover{
+    background-color: #facf7e;
+}
+#submitButton{
+    color: white;
+    background-color: #606ea8;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 11px;
+    padding-right: 11px;
+    border-bottom: navy 3px solid;
+}
+#submitButton:hover{
+    background-color: #7e88ae;
+}
+.weather-card-container {
+    display: flex;             
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.weather-item {
+    flex: 1 1 130px;
+    text-align: center;
+    margin: 10px; 
+}
+.weather-icon {
+    width: 50px;
+    height: auto;
+}
+.title {
+    font-weight: bold;          
+    margin-bottom: 5px;
+}
+.value {
+    margin-top: 5px;
+}
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.description img {
+    margin-bottom: 10px;
+}
+.popup {
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, #ffffff 0%, #3e476f 100%);
+    font-family: Arial, sans-serif;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.popup:hover{
+    box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.3);
+}
+.popup p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+.flex-container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #3e476f;
+    font-weight: 100;
+    font-size: large;
+}
+
+
+.weather-details {
+    flex: 1;
+    margin-right: 10px;
+}
+.weather-values{
+    color: white;
+    text-align: center;
+    font-size: small;
+}
+.details2{
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: x-large;
+    font-weight: 100;
+}
+.chart-toggle{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+#daily-chart-container{
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+}
+#hourly-chart-container{
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+}
