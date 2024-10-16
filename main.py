@@ -45,6 +45,19 @@ def fetch_weather_data(location):
     response = requests.get(url, params=params)
     if response.status_code == 200:
         return response.json()
+@app.route('/api/get_weather_hardcoded')
+def get_weather_hardcoded():
+    hardcoded_address = "Los Angeles,CA,USA"
+    weather_data = fetch_weather_data(hardcoded_address)
+    if weather_data:
+        return jsonify({
+            'location': {
+                'city': 'Los Angeles',
+                'state': 'CA',
+                'country': 'USA'
+            },
+            'weather': weather_data
+        })
     
 @app.route('/get_weather')
 def get_weather():
