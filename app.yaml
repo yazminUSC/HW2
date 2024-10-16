@@ -1,0 +1,11 @@
+runtime: python310
+
+handlers:
+- url: /.*
+  script: auto
+
+entrypoint: gunicorn main:app
+
+env_variables:
+  TOMORROW_IO_API_KEY: "sHGl3tNip5XwGmj2478slW4MdduNqZsD"
+  IPINFO_TOKEN: "5656a30b541d93"

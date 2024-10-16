@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-
 TOMORROW_IO_API_KEY = os.getenv('TOMORROW_IO_API_KEY')
 IPINFO_TOKEN = os.getenv('IPINFO_TOKEN')
 
@@ -72,5 +71,3 @@ def get_weather():
             if weather_data:
                 return jsonify({'weather': weather_data})
     return jsonify({'error'}), 400
-if __name__ == '__main__':
-    app.run(debug=True)
